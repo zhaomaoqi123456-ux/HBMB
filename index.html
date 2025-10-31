@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>！！！</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <style>
+    .birthday-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    .start-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background: linear-gradient(45deg, #ff6b6b, #feca57);
+      border: none;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .start-button:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+    
+    .start-button:active {
+      transform: translate(-50%, -50%) scale(0.95);
+    }
+    
+    /* 移动端优化 */
+    @media (max-width: 768px) {
+      .start-button {
+        padding: 20px 40px;
+        font-size: 1.5rem;
+        min-width: 200px;
+      }
+    }
+    
+    #tsparticles {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    #tsparticles.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="birthday-container">
+  <button class="start-button" id="startButton">开始庆祝</button>
+  <div class="birthday-text"></div>
+  <!-- tsParticles container -->
+  <div id="tsparticles"></div>
+</div>
+
+<audio id="birthdayAudio" src="./2.mp3" preload="auto"></audio>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/tsparticles@1.34.0/tsparticles.min.js'></script>
+<script src="./script.js"></script>
+
+</body>
+</html>
